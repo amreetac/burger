@@ -4,8 +4,27 @@ li {
   padding: 5px;
 }
 
+h1 {
+	text-align: center;
+}
+
+.centerImage
+{
+text-align:center;
+display:block;
+}
+
+
 .label {
   font-weight: bold;
+}
+
+.available {
+	float: left;
+}
+
+.devoured {
+	float: right;
 }
 
 .create-update-form {
@@ -16,4 +35,8 @@ li {
 
 .form-group {
   margin-bottom: 5px;
+}
+
+.add {
+text-align: center;
 }
