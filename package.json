@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "This will be a burger logger using MySQL, Node, Express, Handlebars, and ORM following a MVC design pattern",
   "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.6",
+    "mysql": "^2.11.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -16,12 +24,5 @@
   "bugs": {
     "url": "https://github.com/amreetac/burger/issues"
   },
-  "homepage": "https://github.com/amreetac/burger#readme",
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "express-handlebars": "^3.0.0",
-    "method-override": "^2.3.6",
-    "mysql": "^2.11.1"
-  }
+  "homepage": "https://github.com/amreetac/burger#readme"
 }
