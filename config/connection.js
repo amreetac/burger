@@ -1,7 +1,7 @@
 //Connection to the database
 
 var mysql = require('mysql');
-var conn2 = require('./connection2.js');
+var conn2 = require('/connection2.js');
 
 console.log(conn2.password);
 
