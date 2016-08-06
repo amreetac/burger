@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({
 app.use(methodOverride(''));
 var exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({
-	defaultLayout: 'm_methodain'
+	defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
 
