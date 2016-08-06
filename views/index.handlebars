@@ -1,52 +1,83 @@
-<!--Set up this file to have the template that Handlebars can render onto
-Also, create a button that will submit the user input into the database.-->
+<div class="jumbotron">
+  <div class="image">
+    <img src="assets/img/burger.png" class="img-rounded" id="burger-pic" alt="Burger Image">
+  </div>
+  <br>
+  <h3>Eat-Da-Burger!</h3>
+</div>
 
-<h1>Burgers!</h1>
+  <!-- Creates the Overall Grid -->
+  <div class="container">
+    
+    <!-- First Row -->
+    <div class="row">
+      <!-- First (and only column) -->
+      <div class="col-md-12">
+        <h1>I'm in Column 1 of 1. I stretch the entire width. And keep going.</h1>
+      </div>
+    </div>
 
-<h2>Available Burgers!</h2>
+    <!-- Second Row -->
+    <div class="row">
+      <!-- First of two columns -->
+      <div class="col-md-6" id="col1">
+        <h1>I'm in Column 1 of 2</h1>
+      </div>
+      <!-- Second of two columns -->
+      <div class="col-md-6">
+        <h1>I'm in Column 2 of 2</h1>
+      </div>
+    </div>
 
-<ul>
-  {{#each burgers}}
-    {{#unless this.devoured}}
-      <li>
-        {{this.burger_name}}
+  </div>
 
-        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="devoured" value="true">
-          <button type="submit">BURGER TIME!</button>
-        </form>
+<!-- <h2>Yummy Burgers to Devour!</h2> -->
 
-      </li>
-    {{/unless}}
-  {{/each}}
-</ul>
+<!-- 
+1 row to hold 3 cols:
+- col1 will have burgers to be devoured.
+- col2 will have devour buttons.
+- col3 will have burgers that have been devoured. 
+-->
 
-<h2>Devoured Burgers</h2>
+<div class="row"> 
+  <ul>
+    {{#each burgers}}
+        <li>
+        {{#unless this.devoured}}
 
-<ul>
-  {{#each burgers}}
-    {{#if this.devoured}}
-      <li>
-        {{this.burger_name}}
+          <div class="col-md-4"> <!-- col1 -->
+            {{this.burger_name}}
+          </div>
 
-        <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="devoured" value="false">
-          <button type ="submit">BURGER! </button>
-        </form>
-      </li>
-    {{/if}}
-  {{/each}}
-</ul>
+          <div class="col-md-4"> <!-- col2 -->
+            <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+              <input type="hidden" name="devoured" value="true">
+              <button type="submit">DEVOUR ME!</button>
+            </form>
+          </div>
+          {{/unless}}
+        {{#if this.devoured}}
+        <div class="col-md-8">
+          <!--blank columns so 3rd column aligns correctly -->
+        </div>
+        <div class="col-md-4"> <!-- col3 -->
+              {{this.burger_name}}
+        </div>
+      {{/if}}
+        </li>
+    {{/each}}
+  </ul>
+</div>
+        </li>
 
-
-
-<h2>Add a Burger</h2>
+<h2>Add a burger</h2>
 <form class="create-update-form" action="burgers/create" method="POST">
 
   <div class="form-group">
     <label for="burg">Burger Name:</label>
     <input type="text" id="burg" name="burger_name">
   </div>
-  
+
   <button type="submit">Add Burger</button>
 </form>
