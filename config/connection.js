@@ -1,7 +1,6 @@
 //Connection to the database
 
 var mysql = require('mysql');
-var conn2 = require('/connection2.js');
 
 console.log(conn2.password);
 
@@ -10,7 +9,7 @@ var connection = mysql.createConnection({
 		port: 3306,
 		host: 'localhost',
 		user: 'root',
-		password: conn2.password,
+		password: 'Smithsonian123',
 		database: 'burgers_db'
 });
 
