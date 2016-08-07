@@ -1,17 +1,26 @@
+.jumbotron {
+  height: 75%;
+}
+
 li {
   background: #9B870C;
   margin: 5px;
   padding: 5px;
 }
 
-h1 {
+h2 {
 	text-align: center;
+  left margin: 50px;
 }
 
-.centerImage
+.picture
 {
-text-align:center;
-display:block;
+text-align: center;
+}
+
+li.devlist {
+  background: #D3D3D3;
+  color: #B3AFAF;
 }
 
 
